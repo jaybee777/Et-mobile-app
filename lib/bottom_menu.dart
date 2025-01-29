@@ -1,3 +1,6 @@
+import 'package:et_app/features/authentication/screens/home/home.dart';
+import 'package:et_app/utils/constants/colors.dart';
+import 'package:et_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,10 +11,14 @@ class BottomMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = EtHelperFunctions.isDarkMode(context);
     final controller = Get.put(NavigationController());
     return Scaffold(
         bottomNavigationBar: Obx(
           () => NavigationBar(
+            elevation: 0,
+            indicatorColor: dark ? EtColors.darkergrey : EtColors.grey,
+            backgroundColor: dark ? Colors.black : Colors.white,
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
                 controller.selectedIndex.value = index,
@@ -33,10 +40,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    Container(
-      height: 500,
-      color: Colors.amber,
-    ),
+    Home(),
     Container(
       height: 500,
       color: Colors.black,

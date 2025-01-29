@@ -23,7 +23,7 @@ class EtImages {
 
   // Success screen image
   static const String successImage =
-      "assets/images/on_boarding_images/Success.gif";
+      "assets/images/on_boarding_images/success.gif";
   // Email Verification Screen's image
   static const String verifyEmailImage =
       "assets/images/on_boarding_images/EmailLightIcon.png";

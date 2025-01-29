@@ -3,6 +3,7 @@ import 'package:et_app/features/authentication/screens/login/login.dart';
 import 'package:et_app/utils/constants/image_strings.dart';
 import 'package:et_app/utils/constants/sizes.dart';
 import 'package:et_app/utils/constants/text_strings.dart';
+import 'package:et_app/utils/device/device_utility.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,8 +19,12 @@ class ResetPassword extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-                height: 180,
-                child: Image(image: AssetImage(EtImages.successImage))),
+              height: EtDeviceUtils.getAppBarHeight(),
+            ),
+            Image(
+                height: EtDeviceUtils.getScreenHeight() * 0.2,
+                width: EtDeviceUtils.getScreenWidth() * 0.7,
+                image: AssetImage(EtImages.successImage)),
             SizedBox(
               height: EtSizes.defaultBwSections,
             ),
@@ -46,12 +51,3 @@ class ResetPassword extends StatelessWidget {
     );
   }
 }
-
-// class ResetPassword extends StatelessWidget {
-//   const ResetPassword({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SuccessScreen();
-//   }
-// }
